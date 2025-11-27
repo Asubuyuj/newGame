@@ -1,0 +1,68 @@
+body {
+  background: linear-gradient(120deg, #004225, #007744);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+#table {
+  background: rgba(100, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+  max-width: 600px;
+}
+
+#dealer-area, #player-area {
+  margin: 20px 0;
+}
+
+#dealer-cards, #player-cards {
+  font-size: 1.8em;
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+
+#controls button {
+  background-color: #228B22;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#controls button:hover:not(:disabled) {
+  background-color: #32CD32;
+}
+
+#controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#message {
+  font-size: 1.3em;
+  margin-top: 15px;
+}
+
+#stats-area {
+  background: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+  max-width: 75px;
+  line-height: 1px;
+}
+
+
+

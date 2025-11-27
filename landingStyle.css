@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(120deg, #004225, #007744);
+  color: #f00c0c;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#play-game {
+  background-color: #228B22;
+}
+
+#how {
+  background-color: aqua;
+  border-radius: 100px;
+}
