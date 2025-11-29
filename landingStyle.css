@@ -1,5 +1,5 @@
 body {
-    background-image: url("blackjackTitle.png");
+    background-image: url("blackjackLanding.png");
     background-size: cover;      /* makes the image fill the screen */
     background-repeat: no-repeat; /* prevents tiling */
     background-position: center;  /* centers the image */
@@ -11,7 +11,7 @@ h2 {
 
 /*div styling*/
 #how {
-  background-color: none;
+  background-color: transparent;
   max-width: 450px;
 }
 
@@ -22,7 +22,7 @@ h2 {
 }
 
 #play-game {
-  background-color: none;
+  background-color: transparent;
   max-width: 100px;
 }
 
@@ -43,16 +43,20 @@ h2 {
 }
 
 
-.button-style {
+button{
   background-color: rgb(0, 0, 0);
   border-radius: 10px;
   cursor: pointer;
-}
-.gradient-text-btns {
   color: #fff; /* White text */
   /* No offset, strong blur, vibrant color */
   text-shadow: 0 0 5px #c92525, 0 0 20px #ff0000;
+  transition: 0.2s;
 }
+
+button:hover {
+  background-color: transparent
+}
+
 .gradient-text {
   color: #fff; /* White text */
   /* No offset, strong blur, vibrant color */

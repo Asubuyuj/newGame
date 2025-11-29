@@ -1,9 +1,13 @@
 body {
-  background: linear-gradient(120deg, #004225, #007744);
-  color: #fff;
+  /*background: linear-gradient(120deg, #004225, #007744);*/
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   padding: 20px;
+  background-image: url("mainGame.png");
+  background-size: cover;      /* makes the image fill the screen */
+  background-repeat: no-repeat; /* prevents tiling */
+  background-position: center;  /* centers the image */
+  background-attachment: fixed;
 }
 
 h1 {
@@ -30,19 +34,16 @@ h1 {
 }
 
 #controls button {
-  background-color: #228B22;
-  border: none;
   padding: 10px 15px;
   margin: 5px;
   border-radius: 8px;
-  color: white;
   font-size: 1em;
   cursor: pointer;
   transition: 0.2s;
 }
 
 #controls button:hover:not(:disabled) {
-  background-color: #32CD32;
+  background-color: transparent;
 }
 
 #controls button:disabled {
@@ -56,7 +57,7 @@ h1 {
 }
 
 #stats-area {
-  background: rgba(0, 0, 0, 1);
+  background-color: transparent;
   border-radius: 10px;
   padding: 10px;
   margin: auto;
@@ -65,4 +66,17 @@ h1 {
 }
 
 
+button {
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff; /* White text */
+  /* No offset, strong blur, vibrant color */
+  text-shadow: 0 0 5px #c92525, 0 0 20px #ff0000;
+}
 
+.gradient-text {
+  color: #fff; /* White text */
+  /* No offset, strong blur, vibrant color */
+  text-shadow: 0 0 5px #c92525, 0 0 20px #ff0000;
+}
