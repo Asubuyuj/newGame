@@ -145,10 +145,10 @@ function resetStats(){
 }
 
 function updateUI() {
-  dealerCards.textContent = dealerHand.map(c => c.value + c.suit).join(" ");
-  playerCards.textContent = playerHand.map(c => c.value + c.suit).join(" ");
+  renderHand(dealerCards, dealerHand);   // changed with new
+  renderHand(playerCards, playerHand);
   dealerScore.textContent = "Dealer: " + handValue(dealerHand);
-  playerScore.textContent = "You: " + handValue(playerHand);
+  playerScore.textContent = "Player: " + handValue(playerHand);
 }
 
 //function to update UI for stat tracking
@@ -157,6 +157,30 @@ function statUI(){
   statLosses.textContent =  "Losses: " + losses;
   statTies.textContent =  "Ties: " + ties;
 }
+// new
+function renderHand(container, hand) {
+  // clear previous content
+  container.innerHTML = "";
+
+  hand.forEach(card => {
+    const span = document.createElement("span");
+    span.classList.add("card");
+
+    // red suits
+    if (card.suit === "♥" || card.suit === "♦") {
+      span.classList.add("red");
+    }
+
+    // e.g. "A♠" or "10♦"
+    span.textContent = card.value + card.suit;
+
+    container.appendChild(span);
+  });
+}
+
+
+
+
 
 //event listeners
 dealBtn.addEventListener('click', startGame);
