@@ -8,13 +8,36 @@
 </head>
 
 <body>
-    <h1>Blackjack</h1>
-
-    <div id="play-game">
-        <button id="play">Play Blackjack</button>
-    </div>
+    <!--How to play and rule divs and buttons-->
     <div id="how">
-        <button id="about-btn">How To Play</button>
+        <button id="how-to-play-btn" class="gradient-text-btns button-style">How To Play</button>
+
+        <div id="message" class="gradient-text">
+            <h2>Basic Rules</h2>
+            <ul>
+                <li>Your hand is closer to 21 than the dealer’s AND not over 21</li>
+                <li>You will play against the Dealer(CPU)</li>
+                <li>Each player will get 2 cards</li>
+                <li>Each player will then take turns to either 'Hit' or 'Stand'</li>
+                <li>Hit: Get another card</li>
+                <li>Stand: Keep current cards and end turn</li>
+                <li>Bust: Card Values are over 21</li>
+                <li>Push: You and Dealer tie with same value</li>
+            </ul>
+            <h2>Cards</h2>
+            <ul>
+                <li>Number Cards are face value</li>
+                <li>Face Cards (J,Q,K) = 10</li>
+                <li>Ace(A) can be either 1 or 11, which ever benefits your hand best</li>
+            </ul>
+            <!--Close button for rules-->
+            <button id="close-btn" class="gradient-text-btns button-style">Close</button> 
+        </div>
+    </div>
+
+    <!--Play button, goes to another screen to play game-->
+    <div id="play-game">
+        <button id="play-btn" class="gradient-text-btns button-style">Play Blackjack</button>
     </div>
     <script src="landingScript.js"></script>
 </body>
