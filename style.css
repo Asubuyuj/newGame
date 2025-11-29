@@ -1,3 +1,4 @@
+/* ==== Global layout ==== */
 *,
 *::before,
 *::after {
@@ -9,8 +10,11 @@ body {
   min-height: 100vh;
   padding: 24px 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #fdfdfd;
+  text-align: center;
 
-  background-image: url("blackjackLanding.png");
+  /* Your background image */
+  background-image: url("mainGame.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,113 +23,225 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-/* Glow text like your game page */
+/* Keep your glow text effect via .gradient-text on <body> */
 .gradient-text {
   color: #fff;
   text-shadow: 0 0 5px #c92525, 0 0 20px #ff0000;
 }
 
-/* Wrapper for rules + buttons */
-#how {
-  max-width: 480px;
+/* ==== Title ==== */
+h1 {
+  margin: 8px 0 20px;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ==== Table container ==== */
+#table {
   width: 100%;
-  margin-bottom: 24px;
-  text-align: center;
-}
+  max-width: 960px;
+  margin: 0 auto 20px;
+  padding: 24px 24px 28px;
 
-/* "How to Play" button always visible */
-#how-to-play-btn {
-  margin-bottom: 16px;
-}
-
-/* Rules panel */
-#message {
-  display: none; /* shown via JS */
-  padding: 18px 20px 16px;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.78);
-  color: #fdfdfd;
+  background: radial-gradient(circle at top, rgba(0, 120, 60, 0.9), rgba(0, 50, 25, 0.95));
+  border-radius: 24px;
   box-shadow:
-          0 16px 34px rgba(0, 0, 0, 0.8),
+          0 18px 40px rgba(0, 0, 0, 0.75),
           0 0 0 1px rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-#message h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.35rem;
+/* Dealer & Player areas */
+#dealer-area,
+#player-area {
+  padding: 14px 18px 18px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.55);
 }
 
-#message ul {
-  text-align: left;
-  padding-left: 18px;
-  margin: 6px 0 10px;
+#dealer-area h2,
+#player-area h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+/* Hands + scores (wrap these in a div if you want more control) */
+.hand-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.9;
+}
+
+.score {
+  font-weight: 600;
+}
+
+/* Card containers (using your current textContent output) */
+#dealer-cards,
+#player-cards {
+  min-height: 52px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.4rem;
+  letter-spacing: 0.24em;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+/* OPTIONAL: if you change JS to output <span class="card"> elements */
+.card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 72px;
+  margin-right: 8px;
+  border-radius: 8px;
+  background: #fdfdfd;
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card.red {
+  color: #d0002b;
+}
+
+/* ==== Stats ==== */
+#stats {
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.35);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
   font-size: 0.95rem;
 }
 
-#message li + li {
-  margin-top: 4px;
+#stats p {
+  margin: 0;
+  font-weight: 600;
 }
 
-/* Close button inside rules */
-#close-btn {
-  margin-top: 8px;
+#overall-score {
+  width: 100%;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
-/* Play-game button block */
-#play-game {
-  text-align: center;
+/* ==== Controls ==== */
+#controls {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
-#play-btn {
-  font-size: 1.05rem;
-}
-
-/* Shared button style */
+/* Buttons */
 button {
+  position: relative;
   padding: 10px 20px;
+  min-width: 110px;
   border-radius: 999px;
   border: none;
   outline: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   cursor: pointer;
 
   background: linear-gradient(135deg, #ff0040, #ff7b00);
   color: #fff;
-  font-weight: 600;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-
   text-shadow: 0 0 5px #c92525, 0 0 20px #ff0000;
+
   box-shadow:
           0 10px 22px rgba(0, 0, 0, 0.65),
-          0 0 8px rgba(255, 0, 64, 0.7);
+          0 0 10px rgba(255, 0, 64, 0.7);
   transition:
           transform 0.12s ease-out,
           box-shadow 0.12s ease-out,
-          filter 0.12s ease-out;
+          filter 0.12s ease-out,
+          opacity 0.12s ease-out;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   transform: translateY(-1px);
   filter: brightness(1.08);
   box-shadow:
           0 14px 30px rgba(0, 0, 0, 0.7),
-          0 0 14px rgba(255, 90, 0, 0.9);
+          0 0 16px rgba(255, 90, 0, 0.9);
 }
 
-button:active {
+button:active:not(:disabled) {
   transform: translateY(1px) scale(0.98);
   box-shadow:
           0 6px 16px rgba(0, 0, 0, 0.75),
-          0 0 8px rgba(255, 90, 0, 0.7);
+          0 0 10px rgba(255, 90, 0, 0.7);
 }
 
-/* Small screens */
-@media (max-width: 600px) {
-  #message {
+button:disabled {
+  opacity: 0.38;
+  cursor: default;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ==== Message text ==== */
+#message {
+  margin-top: 8px;
+  min-height: 24px;
+  font-size: 1.05rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+/* ==== Responsive tweaks ==== */
+@media (max-width: 700px) {
+  #table {
+    padding: 18px 14px 22px;
+  }
+
+  #dealer-cards,
+  #player-cards {
+    font-size: 1.15rem;
+    letter-spacing: 0.16em;
+  }
+
+  button {
+    min-width: 100px;
+    padding-inline: 16px;
     font-size: 0.9rem;
   }
 }
