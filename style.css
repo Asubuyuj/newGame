@@ -8,7 +8,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  padding: 24px 16px;
+  padding: 100px 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #fdfdfd;
   text-align: center;
@@ -38,7 +38,9 @@ h1 {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-
+h3 {
+  margin: 3px;
+}
 /* ==== Table container ==== */
 #table {
   width: 100%;
@@ -46,7 +48,7 @@ h1 {
   margin: 0 auto 20px;
   padding: 24px 24px 28px;
 
-  background: radial-gradient(circle at top, rgba(0, 120, 60, 0.9), rgba(0, 50, 25, 0.95));
+  background: radial-gradient(circle at top, rgba(169, 170, 170, 0.9), rgba(35, 36, 36, 0.95));
   border-radius: 24px;
   box-shadow:
           0 18px 40px rgba(0, 0, 0, 0.75),
@@ -61,7 +63,7 @@ h1 {
 /* Dealer & Player areas */
 #dealer-area,
 #player-area {
-  padding: 14px 18px 18px;
+  padding: 14px 18px 14px;
   border-radius: 18px;
   background: rgba(0, 0, 0, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -75,6 +77,10 @@ h1 {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.92;
+}
+#dealer-score, #player-score {
+  margin: 0;
+  font-size: 1.25rem;
 }
 
 /* Hands + scores */
@@ -132,20 +138,21 @@ h1 {
 }
 
 /* ==== Stats ==== */
-#stats {
-  margin-top: 4px;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.35);
+#stats-area {
+  background-color: rgba(59, 59, 59, 0.9);
+  margin-top: 1px;
+  margin-bottom: 10px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
+  gap: 15px;
   font-size: 0.95rem;
 }
 
-#stats p {
-  margin: 0;
+#stats-area p {
+  margin: 5px;
   font-weight: 600;
 }
 
@@ -221,7 +228,7 @@ button:disabled {
 #message {
   margin-top: 8px;
   min-height: 24px;
-  font-size: 1.05rem;
+  font-size: 2rem;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
 }
 

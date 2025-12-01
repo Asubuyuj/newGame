@@ -188,3 +188,4 @@ hitBtn.addEventListener('click', hit);
 standBtn.addEventListener('click', stand);
 restartBtn.addEventListener('click', restart);
 resetStatsBtn.addEventListener('click', resetStats)
+statUI();
